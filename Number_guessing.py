@@ -1,4 +1,4 @@
-import sys, random
+import sys
 
 
 def Guess(lower_end, upper_end, max_tries):
