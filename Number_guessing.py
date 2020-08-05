@@ -1,20 +1,20 @@
 import sys, random
 
 
-def Guess(low_end, high_end, max_tries):
+def Guess(lower_end, upper_end, max_tries):
     tries = 0
     while (tries <= max_tries):
 
-        guess = (low_end + high_end) // 2
+        guess = (lower_end + upper_end) // 2
 
         print(guess)
         sys.stdout.flush()
-        s = str(sys.stdin.readline())
+        s = str(input())
 
         if s == "TOO_BIG":
-            high_end = guess
+            upper_end = guess
         elif s == "TOO_SMALL":
-            low_end = guess + 1
+            lower_end = guess + 1
         elif s == "CORRECT":
             break
         elif s == "WRONG_ANSWER":
@@ -23,11 +23,10 @@ def Guess(low_end, high_end, max_tries):
     return
 
 
-t = int(input())
+t = int(input()) 
 for i in range(t):
-    l = list(map(int, (sys.stdin.readline()).split()))
+    l = list(map(int, input().split()))
     a = l[0]
     b = l[1]
-    n = int(sys.stdin.readline())
+    n = int(input())
     Guess(a, b, n)
-Guess(a, b, n)
